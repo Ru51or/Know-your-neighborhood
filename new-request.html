@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تقديم طلب جديد | اعرف حيك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="newRequest">
+
+  <!-- ===== (Navbar) ===== -->
+  <header class="navbar">
+    <a class="navbar__brand" href="home.html"><img src="assets/logo.png" alt="اعرف حيك"></a>
+    <button class="navbar__toggle" data-action="nav-toggle" aria-label="القائمة">☰</button>
+    <nav class="navbar__links">
+      <a class="navbar__link is-active" href="requests.html">الطلبات</a>
+      <a class="navbar__link " href="neighborhoods.html">الأحياء</a>
+      <a class="navbar__link " href="home.html">الرئيسية</a>
+    </nav>
+    <button class="navbar__logout" data-action="logout">تسجيل الخروج</button>
+  </header>
+
+  <main class="page">
+    <a class="back-link" href="requests.html">  العودة الى الطلبات ❯ </a>
+    <h1 class="page-title">تقديم طلب جديد</h1>
+
+    <div class="form-card">
+      <form id="requestForm" novalidate enctype="multipart/form-data">
+
+        <div class="form-alert"></div>
+
+        <div class="form-row">
+          <label class="field__label" for="title">عنوان الطلب</label>
+          <div class="form-row__control">
+            <div class="input-box input-box--boxed">
+              <input type="text" id="title" name="title" placeholder="الموضوع" maxlength="60">
+            </div>
+            <p class="field__error" data-error-for="title" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="field__label" for="neighborhoodId">الحي</label>
+          <div class="form-row__control">
+            <div class="input-box input-box--boxed">
+              <select id="neighborhoodId" name="neighborhoodId" required>
+                <option value="" disabled selected>اختر</option>
+              </select>
+              <span class="input-box__chevron">⌄</span>
+            </div>
+            <p class="field__error" data-error-for="neighborhoodId" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="field__label" for="serviceTypeId">نوع الخدمة</label>
+          <div class="form-row__control">
+            <div class="input-box input-box--boxed">
+              <select id="serviceTypeId" name="serviceTypeId" required>
+                <option value="" disabled selected>اختر</option>
+              </select>
+              <span class="input-box__chevron">⌄</span>
+            </div>
+            <p class="field__error" data-error-for="serviceTypeId" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="field__label" for="description">وصف الطلب</label>
+          <div class="form-row__control">
+            <div class="input-box input-box--boxed input-box--area">
+              <textarea id="description" name="description" placeholder="وصف الطلب" maxlength="500"></textarea>
+            </div>
+            <p class="field__error" data-error-for="description" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="field__label" for="attachment">مرفق</label>
+          <div class="form-row__control">
+            <div class="input-box input-box--boxed">
+              <span class="input-box__icon">📎</span>
+              <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+            <p class="field__error" data-error-for="attachment" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">إرسال</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== (Footer) ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <nav class="footer__links">
+          <a href="#">خريطة الموقع</a>
+          <a href="#">الأسئلة الشائعة</a>
+        </nav>
+        <p class="footer__copy">جميع الحقوق محفوظة © لأمانة المنطقة الشرقية - المملكة العربية السعودية</p>
+      </div>
+      <div>
+        <p class="footer__social-title">تابعنا على</p>
+        <div class="footer__social">
+          <a href="#" aria-label="إكس">✕</a>
+          <a href="#" aria-label="فيسبوك">f</a>
+          <a href="#" aria-label="إنستقرام">◎</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
